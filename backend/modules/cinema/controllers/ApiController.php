@@ -20,6 +20,7 @@ class ApiController extends \backend\controllers\ApiController
             'index' => ['class' => 'backend\modules\music\actions\HomeAction', 'checkAccess' => [$this, 'checkAccess']],
             'actor' => ['class' => 'backend\modules\cinema\actions\CinemaActorAction', 'checkAccess' => [$this, 'checkAccess']],
             'hall' => ['class' => 'backend\modules\cinema\actions\CinemaHallAction', 'checkAccess' => [$this, 'checkAccess']],
+            'movie' => ['class' => 'backend\modules\cinema\actions\CinemaMovieAction', 'checkAccess' => [$this, 'checkAccess']],
             'search' => ['class' => 'backend\modules\music\actions\SearchAction', 'checkAccess' => [$this, 'checkAccess']],
             'feedback' => ['class' => 'backend\modules\music\actions\FeedbackAction', 'checkAccess' => [$this, 'checkAccess']],
             'browse' => ['class' => 'backend\modules\music\actions\BrowseMusicAction', 'checkAccess' => [$this, 'checkAccess']],

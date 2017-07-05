@@ -41,7 +41,7 @@ class CinemaActor extends CinemaActorBase //\yii\db\ActiveRecord
         
             [['id', 'image', 'name', 'description', 'content', 'country', 'dob', 'gender', 'type', 'sort_order', 'is_active', 'status', 'created_date', 'modified_date', 'application_id'], 'filter', 'filter' => 'trim'],
                 
-            [['image', 'name', 'country', 'dob', 'gender', 'type', 'is_active', 'created_date'], 'required'],
+            [['name', 'country', 'dob', 'gender', 'type', 'is_active'], 'required'],
             [['content'], 'string'],
             [['dob', 'created_date', 'modified_date'], 'safe'],
             [['sort_order', 'is_active'], 'integer'],

@@ -126,7 +126,7 @@ $this->params['toolBarActions'] = array(
                                                <?php echo FFormTable::widget(['model' => $model, 'title' => FHtml::t('common', 'Group'), 'form' => $form, 'columns' => 2, 'attributes' => [ 
 
                                             'status' => ['value' => $form->fieldNoLabel($model, 'status')->select(FHtml::getComboArray('cinema_hall', 'cinema_hall', 'status', true, 'id', 'name')), 'columnOptions' => ['colspan' => 1], 'type' => FHtml::INPUT_RAW],
-'type' => ['value' => $form->fieldNoLabel($model, 'type')->select(FHtml::getComboArray('cinema_hall', 'cinema_hall', 'type', true, 'id', 'name')), 'columnOptions' => ['colspan' => 1], 'type' => FHtml::INPUT_RAW],
+'type' => ['value' => $form->fieldNoLabel($model, 'type')->select(['normal' => 'Normal']), 'columnOptions' => ['colspan' => 1], 'type' => FHtml::INPUT_RAW],
 
                                                 'is_active' => ['value' => $form->fieldNoLabel($model, 'is_active')->checkbox() , 'columnOptions' => ['colspan' => 1], 'type' => FHtml::INPUT_RAW],
 
