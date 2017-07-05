@@ -23,6 +23,7 @@ use common\widgets\formfield\FormRelations;
 use common\widgets\FFormTable;
 use yii\widgets\Pjax;
 
+use backend\modules\cinema\models\CinemaActor;
 $form_Type = $this->params['activeForm_type'];
 
 $moduleName = 'CinemaMovie';
@@ -110,12 +111,12 @@ $this->params['toolBarActions'] = array(
                             <div class="tab-content">
                                 <div class="tab-pane active row" id="tab_1_1">
                                     <div class="col-md-12">
-                                               <?php echo FFormTable::widget(['model' => $model, 'form' => $form, 'columns' => 1, 'attributes' => [ 
+                                               <?php echo FFormTable::widget(['model' => $model, 'form' => $form, 'columns' => 1, 'attributes' => [
                                         'code' => ['value' => $form->fieldNoLabel($model, 'code')->textInput(), 'columnOptions' => ['colspan' => 1], 'type' => FHtml::INPUT_RAW],
 'name'         => ['value' => $form->fieldNoLabel($model, 'name')->textInput(), 'columnOptions' => ['colspan' => 1], 'type' => FHtml::INPUT_RAW],
 'description'  => ['value' => $form->fieldNoLabel($model, 'description')->textarea(['rows' => 3]), 'columnOptions' => ['colspan' => 1], 'type' => FHtml::INPUT_RAW],
 'content'      => ['value' => $form->fieldNoLabel($model, 'content')->html() , 'columnOptions' => ['colspan' => 1], 'type' => FHtml::INPUT_RAW],
-'director'     => ['value' => $form->fieldNoLabel($model, 'director')->select(FHtml::getComboArray('cinema_movie', 'cinema_movie', 'director', true, 'id', 'name')), 'columnOptions' => ['colspan' => 1], 'type' => FHtml::INPUT_RAW],
+'director'     => ['value' => $form->fieldNoLabel($model, 'director')->select(FHtml::getComboArray(CinemaActor::findAll(['type' => 'writer']), 'cinema_movie', 'director', true, 'id', 'name')), 'columnOptions' => ['colspan' => 1], 'type' => FHtml::INPUT_RAW],
 'writer'       => ['value' => $form->fieldNoLabel($model, 'writer')->select(FHtml::getComboArray('cinema_movie', 'cinema_movie', 'writer', true, 'id', 'name')), 'columnOptions' => ['colspan' => 1], 'type' => FHtml::INPUT_RAW],
 'runtime'      => ['value' => $form->fieldNoLabel($model, 'runtime')->date(), 'columnOptions' => ['colspan' => 1], 'type' => FHtml::INPUT_RAW],
 'trailer'      => ['value' => $form->fieldNoLabel($model, 'trailer')->textInput(), 'columnOptions' => ['colspan' => 1], 'type' => FHtml::INPUT_RAW],
